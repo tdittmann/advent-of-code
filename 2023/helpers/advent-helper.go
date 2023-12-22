@@ -13,10 +13,10 @@ func ReadContentOfFile(path string) []string {
 		fmt.Print(err)
 	}
 
-	return SplitStringByNewLine(string(dat))
+	return splitStringByNewLine(string(dat))
 }
 
-func SplitStringByNewLine(input string) []string {
+func splitStringByNewLine(input string) []string {
 
 	return strings.Split(input, "\n")
 }
