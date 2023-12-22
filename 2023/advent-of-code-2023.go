@@ -4,6 +4,7 @@ import (
 	"adventofcode2023/2023/day01"
 	"adventofcode2023/2023/day02"
 	"adventofcode2023/2023/day03"
+	"adventofcode2023/2023/day04"
 	"adventofcode2023/2023/helpers"
 	"fmt"
 )
@@ -28,5 +29,10 @@ func main() {
 	fmt.Printf("Day 3 --> Part 1: [%d] | Part 2: [%d]\n",
 		day03.SolvePartOne(helpers.ReadContentOfFile(puzzle03)),
 		day03.SolvePartTwo(helpers.ReadContentOfFile(puzzle03)))
+
+	puzzle04 := "2023/day04/puzzle.txt"
+	fmt.Printf("Day 4 --> Part 1: [%d] | Part 2: [%d]\n",
+		day04.SolvePartOne(helpers.ReadContentOfFile(puzzle04)),
+		day04.SolvePartTwo(helpers.ReadContentOfFile(puzzle04)))
 
 }
