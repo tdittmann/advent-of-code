@@ -3,8 +3,6 @@ package main
 import (
 	"adventofcode2023/2023/helpers"
 	"fmt"
-	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -37,7 +35,7 @@ func SolvePartOne(puzzleInput []string) int {
 
 		splittedLine := strings.Split(line, ":")
 
-		gameNumber := extractNumber(splittedLine[0])
+		gameNumber := helpers.ExtractNumber(splittedLine[0])
 
 		splittedSubsets := strings.Split(splittedLine[1], ";")
 
@@ -119,14 +117,8 @@ func SolvePartTwo(puzzleInput []string) int {
 func findNumberOfCubes(input string, color string) int {
 
 	if strings.Contains(input, color) {
-		return extractNumber(input)
+		return helpers.ExtractNumber(input)
 	}
 
 	return 0
-}
-
-func extractNumber(input string) int {
-	numberRegex := regexp.MustCompile("[0-9]+")
-	number, _ := strconv.Atoi(numberRegex.FindAllString(input, -1)[0])
-	return number
 }

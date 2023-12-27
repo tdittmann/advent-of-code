@@ -3,8 +3,6 @@ package main
 import (
 	"adventofcode2023/2023/helpers"
 	"fmt"
-	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -43,7 +41,7 @@ func SolvePartOne(puzzleInput []string) int {
 			splittedSeeds := strings.Split(line, "seeds: ")
 			splittedNumbers := strings.Split(splittedSeeds[1], " ")
 			for _, seedNumber := range splittedNumbers {
-				seeds = append(seeds, extractNumber(seedNumber))
+				seeds = append(seeds, helpers.ExtractNumber(seedNumber))
 			}
 			continue
 		}
@@ -61,9 +59,9 @@ func SolvePartOne(puzzleInput []string) int {
 
 		// Add the mapping with starting index, size and offset
 		currentMapping = append(currentMapping, submapping{
-			sourceRangeStart: extractNumber(values[1]),
-			size:             extractNumber(values[2]),
-			offset:           extractNumber(values[0]) - extractNumber(values[1]),
+			sourceRangeStart: helpers.ExtractNumber(values[1]),
+			size:             helpers.ExtractNumber(values[2]),
+			offset:           helpers.ExtractNumber(values[0]) - helpers.ExtractNumber(values[1]),
 		})
 	}
 
@@ -95,12 +93,6 @@ type mapping []submapping
 
 type submapping struct {
 	sourceRangeStart, size, offset int
-}
-
-func extractNumber(input string) int {
-	numberRegex := regexp.MustCompile("[0-9]+")
-	number, _ := strconv.Atoi(numberRegex.FindAllString(input, -1)[0])
-	return number
 }
 
 func SolvePartTwo(puzzleInput []string) int {

@@ -3,9 +3,7 @@ package main
 import (
 	"adventofcode2023/2023/helpers"
 	"fmt"
-	"regexp"
 	"slices"
-	"strconv"
 	"strings"
 )
 
@@ -123,11 +121,5 @@ func SolvePartTwo(puzzleInput []string) int {
 
 func extractGameNumber(input string) int {
 
-	return extractNumber(strings.Split(input, ":")[0])
-}
-
-func extractNumber(input string) int {
-	numberRegex := regexp.MustCompile("[0-9]+")
-	number, _ := strconv.Atoi(numberRegex.FindAllString(input, -1)[0])
-	return number
+	return helpers.ExtractNumber(strings.Split(input, ":")[0])
 }
