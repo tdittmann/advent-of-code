@@ -11,7 +11,7 @@ func TestPartOne(t *testing.T) {
 
 	var actual = SolvePartOne(input)
 
-	var expected = 999
+	var expected = 35
 	if actual != expected {
 		t.Errorf("Expected [%d] but actual is [%d]", expected, actual)
 	}
@@ -23,7 +23,7 @@ func TestPartTwo(t *testing.T) {
 
 	var actual = SolvePartTwo(input)
 
-	var expected = 999
+	var expected = 46
 	if actual != expected {
 		t.Errorf("Expected [%d] but actual is [%d]", expected, actual)
 	}

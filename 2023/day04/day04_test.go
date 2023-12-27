@@ -1,4 +1,4 @@
-package day04
+package main
 
 import (
 	"adventofcode2023/2023/helpers"
@@ -7,7 +7,7 @@ import (
 
 func TestPartOne(t *testing.T) {
 
-	var input = helpers.ReadContentOfFile("test1.txt")
+	var input = helpers.ReadContentOfFile("test.txt")
 
 	var actual = SolvePartOne(input)
 
@@ -19,7 +19,7 @@ func TestPartOne(t *testing.T) {
 
 func TestPartTwo(t *testing.T) {
 
-	var input = helpers.ReadContentOfFile("test2.txt")
+	var input = helpers.ReadContentOfFile("test.txt")
 
 	var actual = SolvePartTwo(input)
 
